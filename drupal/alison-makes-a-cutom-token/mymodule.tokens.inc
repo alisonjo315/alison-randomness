@@ -35,17 +35,22 @@ function mymodule_tokens($type, $tokens, array $data = array(), array $options =
           $replacements[$original] = $title_fl;
           break;
         case 'field_services_titleshort_join':
+          // Get service ctype node 0 from field_services multivalue ER field.
           if (isset($node->field_services) && $node->field_services <> NULL) {
             $node_svc0 = node_load($node->field_services['und'][0]['target_id']);
             if (isset($node_svc0) && $node_svc0 <> NULL) {
+              // If possible, we want to use the service node's field_title_short value.
+              // Otherwise, we'll use service node title.
               if (isset($node_svc0->field_title_short) && $node_svc0->field_title_short <> NULL) {
                 $titleshort_svc0 = $node_svc0->field_title_short['und'][0]['safe_value'];
               } else {
                 $titleshort_svc0 = $node_svc0->title;
               }
+              // Set token value to $titleshort_svc0 string.
               $replacements[$original] = $titleshort_svc0;
               watchdog('mymodule', 'After svc0, replorig equals :replorig (type :replorig_type)', array(':replorig' => $replacements[$original], ':replorig_type' => gettype($replacements[$original])));
               if (sizeof($node->field_services['und']) > 1) {
+                // Repeat process (and append to token value) with field_services values 1-on.
                 for ( $i=1; $i<sizeof($node->field_services['und']); $i++ ) {
                   $node_svc1on = node_load($node->field_services['und'][$i]['target_id']);
                   if (isset($node_svc1on) && $node_svc1on <> NULL) {
