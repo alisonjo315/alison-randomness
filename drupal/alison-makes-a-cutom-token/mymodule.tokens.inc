@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * itc_path.tokens.inc
+ * mymodule.tokens.inc
  */
 
 /**
  * Implements hook_token_info().
  */
-function itc_path_token_info() {
+function mymodule_token_info() {
   $info['tokens']['node']['first_letter'] = array(
     'name' => t('First Letter'),
     'description' => t('The first letter of the node title.'),
@@ -22,7 +22,7 @@ function itc_path_token_info() {
 /**
  * Implements hook_tokens().
  */
-function itc_path_tokens($type, $tokens, array $data = array(), array $options = array()) {
+function mymodule_tokens($type, $tokens, array $data = array(), array $options = array()) {
   $replacements = array();
   //$sanitize = !empty($options['sanitize']);
   // Node tokens.
