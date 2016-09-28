@@ -24,7 +24,6 @@ function mymodule_token_info() {
  */
 function mymodule_tokens($type, $tokens, array $data = array(), array $options = array()) {
   $replacements = array();
-  //$sanitize = !empty($options['sanitize']);
   // Node tokens.
   if ($type == 'node' && !empty($data['node'])) {
     $node = $data['node'];
