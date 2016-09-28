@@ -45,7 +45,7 @@ function mymodule_tokens($type, $tokens, array $data = array(), array $options =
                 $titleshort_svc0 = $node_svc0->title;
               }
               $replacements[$original] = $titleshort_svc0;
-              watchdog('itc_path', 'After svc0, replorig equals :replorig (type :replorig_type)', array(':replorig' => $replacements[$original], ':replorig_type' => gettype($replacements[$original])));
+              watchdog('mymodule', 'After svc0, replorig equals :replorig (type :replorig_type)', array(':replorig' => $replacements[$original], ':replorig_type' => gettype($replacements[$original])));
               if (sizeof($node->field_services['und']) > 1) {
                 for ( $i=1; $i<sizeof($node->field_services['und']); $i++ ) {
                   $node_svc1on = node_load($node->field_services['und'][$i]['target_id']);
@@ -56,8 +56,8 @@ function mymodule_tokens($type, $tokens, array $data = array(), array $options =
                       $titleshort_svc1on = $node_svc1on->title;
                     }
                     $replacements[$original] .= ', ' . $titleshort_svc1on;
-                    watchdog('itc_path', 'titleshort_svc1on :i equals :titleshort (type :titleshort_type)', array(':i' => $i, ':titleshort' => $titleshort_svc1on, ':titleshort_type' => gettype($titleshort_svc1on)));
-                    watchdog('itc_path', 'After svc1on :i, replorig equals :replorig (type :replorig_type)', array(':i' => $i, ':replorig' => $replacements[$original], ':replorig_type' => gettype($replacements[$original])));
+                    watchdog('mymodule', 'titleshort_svc1on :i equals :titleshort (type :titleshort_type)', array(':i' => $i, ':titleshort' => $titleshort_svc1on, ':titleshort_type' => gettype($titleshort_svc1on)));
+                    watchdog('mymodule', 'After svc1on :i, replorig equals :replorig (type :replorig_type)', array(':i' => $i, ':replorig' => $replacements[$original], ':replorig_type' => gettype($replacements[$original])));
                   }
                 }
                 break;
