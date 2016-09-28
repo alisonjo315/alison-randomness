@@ -6,6 +6,9 @@ Background for this work can be summed-up by my help request message to the d4g 
 > 
 > (I know I can use :0, :1, :2, etc., for multi-value field tokens, but, I really need to just explode 'em all right there.)
 
+## What I did
+Check out [mymodule.tokens.inc](./mymodule.tokens.inc) -- all my debugging crap is still in there, b/c why not.  Also included is a custom token I'm not actually using, of course, but served as a proof of concept (and was taken from one of the resources I found on the interwebs, obvi) -- again, I left it in there for this share, b/c why not.
+
 ## See also
 * [hook_tokens](https://api.drupal.org/api/drupal/modules!system!system.api.php/function/hook_tokens/7.x)
 * [token_example.tokens.inc](http://cgit.drupalcode.org/examples/tree/token_example/token_example.tokens.inc?h=7.x-1.x)
