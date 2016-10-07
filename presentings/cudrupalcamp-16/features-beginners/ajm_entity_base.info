@@ -1,0 +1,13 @@
+name = Entity base
+description = Components shared by variuos entity types (field bases, view modes, custom formatters, sb fields view/context)
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+dependencies[] = features
+dependencies[] = file
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = comment_body
+features[field_base][] = field_attachment
+features[field_base][] = field_subtitle
