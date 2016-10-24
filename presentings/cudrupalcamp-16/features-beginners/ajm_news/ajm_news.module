@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the News ctype feature.
+ */
+
+include_once 'ajm_news.features.inc';
