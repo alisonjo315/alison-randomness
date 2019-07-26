@@ -1,5 +1,5 @@
 # alison-randomness
 
-A place where I can put things that I want to link to or otherwise share.  Oh, and "I" = "Alison."
+A place where I put things that I want to link to or otherwise share.  Oh, and "I" am "Alison."
 
 Welcome!
