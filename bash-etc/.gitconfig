@@ -1,0 +1,52 @@
+[web]
+	browser = firefox
+[help]
+	browser = firefox
+	format = web
+[user]
+	name = REDACTED
+	email = REDACTED@imsofunny.com
+[core]
+	editor = nano
+	;autocrlf = false
+[color]
+	ui = true
+[push]
+	default = simple
+[alias]
+	co = checkout
+	uncommit = reset HEAD^
+	last = log --name-status -1 HEAD
+	logone = log --oneline
+	logr = log --reverse
+	logg = log --name-status
+	loggm = log --name-status --no-merges
+	loggr = log --name-status --reverse
+	loggmr = log --name-status --no-merges --reverse
+	loggad = log --diff-filter=AD --name-status
+	loggraph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	# same as loggraph, but I always seem to think of "tree" when I want to do this, so
+	logtree = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	diffad = diff --diff-filter=AD --name-status
+	diffmod = diff --diff-filter=M
+	difff = diff --name-status
+	diffstg = diff --staged
+	diffclrmv = diff --color-moved=zebra
+	diff4 = diff -U4
+	diff5 = diff -U5
+	diff6 = diff -U6
+  showw = show --name-status
+	cldry = clean -nd
+	clgo	= clean -df
+	clremotebr = remote prune origin
+	# see also: ./git.delete-merged-branches.txt
+	cherryx = cherry-pick -x
+	brdatea = branch --sort=committerdate
+	brdated = branch --sort=-committerdate
+	brdel = branch -D
+	pushsu = push --set-upstream origin
+	pr = !sh -c 'git fetch $1 refs/pull/$2/head:pr-$1-$2 && git checkout pr-$1-$2' -
+	tagdatea = tag --sort=committerdate
+	tagdated = tag --sort=-committerdate
+	# also: git tag | grep pantheon_live_ | sort -k1.15n | tail -1
+	# also: ~/.bash_aliases: alias master='git checkout master'
