@@ -35,7 +35,7 @@
 	diff4 = diff -U4
 	diff5 = diff -U5
 	diff6 = diff -U6
-  showw = show --name-status
+        showw = show --name-status
 	cldry = clean -nd
 	clgo	= clean -df
 	clremotebr = remote prune origin
