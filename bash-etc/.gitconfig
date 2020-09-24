@@ -16,6 +16,7 @@
 	default = simple
 [alias]
 	co = checkout
+	master='checkout master'
 	uncommit = reset HEAD^
 	last = log --name-status -1 HEAD
 	logone = log --oneline
@@ -37,8 +38,9 @@
 	diff5 = diff -U5
 	diff6 = diff -U6
 	showw = show --name-status
-	cldry = clean -nd
+	cldry = clean -nd  ## dry run of the command on the next line
 	clgo	= clean -df
+	# see also: "cleancex" in .bash_aliases (drupal + config + git section at the end)
 	clremotebr = remote prune origin
 	# see also: ./git.delete-merged-branches.txt
 	cherryx = cherry-pick -x
@@ -52,6 +54,5 @@
 	# also: git tag | grep pantheon_live_ | sort -k1.15n | tail -1
 	# also, after deleting a tag locally that was pushed to the remote, to delete the remote tag:
 	# git push origin :refs/tags/name_of_tag
-	# see also: .bash_aliases -- drupal + config + git section
 [commit]
 	gpgsign = true
