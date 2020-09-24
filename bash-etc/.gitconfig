@@ -50,4 +50,3 @@
 	tagdated = tag --sort=-committerdate
 	# also: git tag | grep pantheon_live_ | sort -k1.15n | tail -1
 	# also: ~/.bash_aliases: alias master='git checkout master'
-	# meh, funny comment
