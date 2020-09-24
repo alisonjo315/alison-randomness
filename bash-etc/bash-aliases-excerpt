@@ -1,0 +1,47 @@
+# to use, rename this file:
+# .bash_aliases
+# (then, it'll be included by .bashrc)
+
+# more ls aliases
+alias ll='ls -alF'
+alias llh='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
+alias ld='ls -al --color=always | grep ^d'
+alias lr='ls -lart'
+alias ldlast='ls -al --color=always --group-directories-first  | tac'
+
+# meta fun!
+alias srcme='source /home/alison/.bashrc'  ## if you make changes to .bashrc or any other bash things, this reloads your profile
+# run: eval $(ssh-agent); ssh-add
+alias sshme='sh /home/alison/.bashinbash.sh'
+
+# misc
+alias spaceforce='df -h'
+alias dirspaceforce='du -h -d 1'
+alias weather='curl wttr.in/ithaca'
+
+# Acquia: drupal update-y things
+alias acqdrups_rmthings='rm -rf core vendor; rm -f *.* .*'
+alias acqdrups_tar='tar --strip-components=1 -xzf'
+
+# some aliases for Terminus things
+alias tmsauth='terminus auth:login'
+alias tms='terminus'
+alias tmsdrush='sh /home/alison/.tms-shortcut.sh'
+alias tmsset_modesftp='terminus connection:set sftp'
+
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias phpininfo_phpcli="php -i|grep 'php.ini'"
+
+# ubuntu things (maintaining my own machine)
+alias diskusage_sudo="sudo baobab"
+alias snapcleanup="sudo bash /home/alison/snaps-remove-old-stuff.sh"
+
+# drupal + config + git... etc...
+alias cleancex="git checkout -- config/.htaccess; chmod 644 config/*"
+alias ccr="drush cc render"
