@@ -6,6 +6,7 @@
 [user]
 	name = REDACTED
 	email = REDACTED@imsofunny.com
+	signingkey = REDACTED
 [core]
 	editor = nano
 	;autocrlf = false
@@ -35,7 +36,7 @@
 	diff4 = diff -U4
 	diff5 = diff -U5
 	diff6 = diff -U6
-  showw = show --name-status
+	showw = show --name-status
 	cldry = clean -nd
 	clgo	= clean -df
 	clremotebr = remote prune origin
@@ -49,4 +50,8 @@
 	tagdatea = tag --sort=committerdate
 	tagdated = tag --sort=-committerdate
 	# also: git tag | grep pantheon_live_ | sort -k1.15n | tail -1
-	# also: ~/.bash_aliases: alias master='git checkout master'
+	# also, after deleting a tag locally that was pushed to the remote, to delete the remote tag:
+	# git push origin :refs/tags/name_of_tag
+	# see also: .bash_aliases -- drupal + config + git section
+[commit]
+	gpgsign = true
