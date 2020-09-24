@@ -42,7 +42,7 @@
 	clgo	= clean -df
 	# see also: "cleancex" in .bash_aliases (drupal + config + git section at the end)
 	clremotebr = remote prune origin
-	# see also: ./git.delete-merged-branches.txt
+	# see also: ./.git_delete-merged-branches.sh
 	cherryx = cherry-pick -x
 	brdatea = branch --sort=committerdate
 	brdated = branch --sort=-committerdate
