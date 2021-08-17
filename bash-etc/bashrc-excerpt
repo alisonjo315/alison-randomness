@@ -1,14 +1,13 @@
-# pretty git labeling things; source: https://makandracards.com/makandra/1090-customize-your-bash-prompt
-#TRON... export PS1='`if [ $? = 0 ]; then echo "\[\e[32m\]✔"; else echo "\[\e[31m\]✘"; fi` \[\033[0m\]\u@\h:\[\e[01;34m\]\w\[\e[00m\]`[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working d
-irectory clean" ]] && echo "\[\e[31m\]" || echo "\[\e[32m\]"`$(__git_ps1 " [%s]\[\e[00m\]") \[\033[0m\]$ '
-#Kim... export PS1='\[\033[01;30m\]\t `if [ $? = 0 ]; then echo "\[\033[01;32m\]ツ"; else echo "\[\033[01;31m\]✗"; fi` \[\033[00;32m\]\h\[\033[00;37m\]:\[\033[31m\]$(__git_ps1 "(%s)\[\033[01m\]")\[\033[00;34
-m\]\w\[\033[00m\] >'
-#Arne... export PS1='\[\e[01;30m\]\t`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[00;37m\]\u\[\e[01;37m\]:`[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Changes to be committed:" ]] && echo "\[\e[31m\]" || echo "\[\e[33m\]"``[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] || echo "\[\e[32m\]"`$(__git_ps1 "(%s)\[\e[00m\]")\[\e[01;34m\]\w\[\e[00m\]\$ '
+# AJM added 20160226 (source: https://makandracards.com/makandra/1090-customize-your-bash-prompt)
+#TRON... export PS1='`if [ $? = 0 ]; then echo "\[\e[32m\]✔"; else echo "\[\e[31m\]✘"; fi` \[\033[0m\]\u@\h:\[\e[01;34m\]\w\[\e[00m\]`[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, work>
+#Kim... export PS1='\[\033[01;30m\]\t `if [ $? = 0 ]; then echo "\[\033[01;32m\]ツ"; else echo "\[\033[01;31m\]✗"; fi` \[\033[00;32m\]\h\[\033[00;37m\]:\[\033[31m\]$(__git_ps1 "(%s)\[\033[01m\]")\[\033[>
+#Arne... export PS1='\[\e[01;30m\]\t`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[00;37m\]\u\[\e[01;37m\]:`[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Chang>
 #Alison (TRON + Arne + Kim)
 export PS1='`if [ $? = 0 ]; then echo "\[\e[32m\]✔"; else echo "\[\e[31m\]✘"; fi ` \[\033[01;30m\]\t \[\e[00;37m\]\u\[\e[01;37m\]: \[\e[01;34m\]\w\[\e[01;37m\]`[[ $(git status 2> /dev/null) =~ Changes\ to\ be\ committed: ]] && echo "\[\e[33m\]" || echo "\[\e[31m\]"``[[ ! $(git status 2> /dev/null) =~ nothing\ to\ commit,\ working\ .+\ clean ]] || echo "\[\e[32m\]"`$(__git_ps1 "[%s]\[\e[00m\]")\[\033[0m\]$ '
 
 # don't make me give my password all the time
 # Check to see if SSH Agent is already running
+# 2021: My latest version doesn' thave this section - I don't remember why, just saying.
 agent_pid="$(ps -ef | grep "ssh-agent" | grep -v "grep" | grep -v "gnome-session" | grep -v "defunct"  | awk '{print($2)}')"
 
 # If the agent is not running (pid is zero length string)
