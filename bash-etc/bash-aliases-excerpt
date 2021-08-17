@@ -1,6 +1,7 @@
 # to use, rename this file:
 # .bash_aliases
 # (then, it'll be included by .bashrc)
+# AND, update paths to your home directories or wherever you put things.
 
 # more ls aliases
 alias ll='ls -alF'
@@ -12,14 +13,11 @@ alias lr='ls -lart'
 alias ldlast='ls -al --color=always --group-directories-first  | tac'
 
 # meta fun!
+# 2021: I haven't figured it out, or spent time investigating, but for some reason I have to do srcme/prosrc these days, and I still feel like it's not working as great as it used to... but it's good enough.
 alias srcme='source /home/alison/.bashrc'  ## if you make changes to .bashrc or any other bash things, this reloads your profile
+alias prosrc='source /home/alison/.profile'
 # run: eval $(ssh-agent); ssh-add
 alias sshme='sh /home/alison/.bashinbash.sh'
-
-# misc
-alias spaceforce='df -h'
-alias dirspaceforce='du -h -d 1'
-alias weather='curl wttr.in/ithaca'
 
 # Acquia: drupal update-y things
 alias acqdrups_rmthings='rm -rf core vendor; rm -f *.* .*'
@@ -31,7 +29,6 @@ alias tms='terminus'
 alias tmsdrush='sh /home/alison/.tms-shortcut.sh'
 alias tmsset_modesftp='terminus connection:set sftp'
 
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -42,6 +39,18 @@ alias phpininfo_phpcli="php -i|grep 'php.ini'"
 alias diskusage_sudo="sudo baobab"
 alias snapcleanup="sudo bash /home/alison/snaps-remove-old-stuff.sh"
 
-# drupal + config + git... etc...
+# drupal + config + git + lando... etc...
+alias master='git checkout master'
+alias main='git checkout main'
 alias cleancex="git checkout -- config/.htaccess; chmod 644 config/*"
+alias cleanmigr_cex="git clean -df config/migrate_plus.migration*"
 alias ccr="drush cc render"
+alias ldmigr_cim_normal="lando migr_cim_normal"
+alias ldmigr_cim_pol="lando migr_cim_pol"
+alias ldmigr_cim_polv="lando migr_cim_polv"
+alias dockerstop='sudo service docker stop'
+
+# misc
+alias spaceforce='df -h'
+alias dirspaceforce='du -h -d 1'
+alias weather='curl wttr.in/ithaca'
