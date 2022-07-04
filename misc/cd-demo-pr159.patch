@@ -1,7 +1,7 @@
-diff --git a/web/core/modules/filter/filter.filter_html.admin.js b/web/core/modules/filter/filter.filter_html.admin.js
+diff --git a/core/modules/filter/filter.filter_html.admin.js b/core/modules/filter/filter.filter_html.admin.js
 index 54eed3ff6..d31500f9c 100644
---- a/web/core/modules/filter/filter.filter_html.admin.js
-+++ b/web/core/modules/filter/filter.filter_html.admin.js
+--- a/core/modules/filter/filter.filter_html.admin.js
++++ b/core/modules/filter/filter.filter_html.admin.js
 @@ -173,7 +173,17 @@
          }
  
