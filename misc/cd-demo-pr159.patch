@@ -1,0 +1,30 @@
+diff --git a/web/core/modules/filter/filter.filter_html.admin.js b/web/core/modules/filter/filter.filter_html.admin.js
+index 54eed3ff6..d31500f9c 100644
+--- a/web/core/modules/filter/filter.filter_html.admin.js
++++ b/web/core/modules/filter/filter.filter_html.admin.js
+@@ -173,7 +173,17 @@
+         }
+ 
+         if (rule.restrictedTags.allowed.classes.length) {
+-          setting += " class=\"".concat(rule.restrictedTags.allowed.classes.join(' '), "\"");
++
++          // Edit to protect the "allowed HTML tags" field from a recent bug that mishandles tags with all classes accepted (ama39 6/24/22)
++          // Issue on Drupal.org: https://www.drupal.org/project/drupal/issues/2710427
++          if (rule.restrictedTags.allowed.classes[0] == '' || rule.restrictedTags.allowed.classes[0] == '*') {
++            setting += " class";
++          }
++          else {
++            setting += " class=\"".concat(rule.restrictedTags.allowed.classes.join(' '), "\"");
++          }
++          // ---
++
+         }
+ 
+         setting += '>';
+@@ -194,4 +204,4 @@
+     html += '</p>';
+     return html;
+   };
+-})(jQuery, Drupal, _, document);
+\ No newline at end of file
++})(jQuery, Drupal, _, document);
