@@ -1,0 +1,30 @@
+diff --git a/core/modules/filter/filter.filter_html.admin.js b/core/modules/filter/filter.filter_html.admin.js
+index cd0c03b3c..753104afa 100644
+--- a/core/modules/filter/filter.filter_html.admin.js
++++ b/core/modules/filter/filter.filter_html.admin.js
+@@ -201,7 +201,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len
+         }
+ 
+         if (rule.restrictedTags.allowed.classes.length) {
+-          setting += " class=\"".concat(rule.restrictedTags.allowed.classes.join(' '), "\"");
++
++          // Edit to protect the "allowed HTML tags" field from a recent bug that mishandles tags with all classes accepted (ama39 6/24/22)
++          // Issue on Drupal.org: https://www.drupal.org/project/drupal/issues/2710427
++          if (rule.restrictedTags.allowed.classes[0] == '' || rule.restrictedTags.allowed.classes[0] == '*') {
++            setting += " class";
++          }
++          else {
++            setting += " class=\"".concat(rule.restrictedTags.allowed.classes.join(' '), "\"");
++          }
++          // ---
++
+         }
+ 
+         setting += '>';
+@@ -222,4 +232,4 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len
+     html += '</p>';
+     return html;
+   };
+-})(jQuery, Drupal, document);
+\ No newline at end of file
++})(jQuery, Drupal, document);
