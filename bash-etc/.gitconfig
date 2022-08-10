@@ -40,7 +40,6 @@
 	showw = show --name-status
 	cldry = clean -nd
 	clgo	= clean -df
-	# see also: "cleancex" and other aliases in .bash_aliases (drupal + config + git + lando section near the end)
 	clremotebr = remote prune origin
 	clremotebrpantheon = remote prune pantheon
 	# see also: ./.git_delete-merged-branches.sh
@@ -52,11 +51,12 @@
 	pr = !sh -c 'git fetch $1 refs/pull/$2/head:pr-$1-$2 && git checkout pr-$1-$2' -
 	tagdatea = tag --sort=committerdate
 	tagdated = tag --sort=-committerdate
+	# because pantheon's default branch is still master, but sometimes we need to push something that's also on GitHub, where "main" is the default branch:
+	pushmain-to-pantheonmaster = push pantheon main:master
 	# also: git tag | grep pantheon_live_ | sort -k1.15n | tail -1
 	# also, after deleting a tag locally that was pushed to the remote, to delete the remote tag:
 	# git push origin :refs/tags/name_of_tag
-	# see also: .bash_aliases -- drupal + config + git section
-	pushmain-to-pantheonmaster = push pantheon main:master
-# 2021: My latest version doesn't have these last two lines -- I don't remember why ¯\_(ツ)_/¯
-# [commit]
-# 	gpgsign = true
+	# see also: .bash_aliases-excerpt -- drupal + config + git + lando section
+# helper to store credentials (specifically for bitbucket app passwords, idk what else it would work for, but that's all I'm using it for right now)
+[credential]
+	helper = store
