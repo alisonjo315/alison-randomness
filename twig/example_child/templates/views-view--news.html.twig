@@ -1,0 +1,21 @@
+{#
+/**
+ * Example view template override in child theme.
+ * Copied from cwd_project on 2022-09-23.
+ *
+ * What we're doing:
+ * ~ Add to view wrapper classes.
+ * ~ Add heading for screen readers.
+ */
+#}
+
+{% set view_add_classes = ['cwd-news'] %}
+{% embed "@example_base/views-view.html.twig" with {
+  'view_add_classes': view_add_classes,
+} %}
+
+{% block view_sr_heading %}
+  <h2 class="sr-only">Full listing</h2>
+{% endblock %}
+
+{% endembed %}
