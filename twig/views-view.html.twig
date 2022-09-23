@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * EXAMPLE Theme override for main view template.
+ *
+ * Copied from cwd_base on 2022-09-23.
+ */
+#}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'view',
+    'view-' ~ css_name,
+    'view-display-id-' ~ display_id,
+    'cwd-component',
+    'cwd-basic'
+  ]
+%}
+{% set classes = classes|merge(view_add_classes|default([])) %}
+
+{% block view_class_override %}
+<div{{ attributes.addClass(classes) }}>
+{% endblock %}
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+
+  {% if header %}
+    <header aria-label="Listing header">
+      {{ header }}
+    </header>
+  {% endif %}
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+
+  {% if rows %}
+    {% block view_sr_heading %}
+    {% endblock %}
+    <div class="view-content cards">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer aria-label="Listing footer">
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>
