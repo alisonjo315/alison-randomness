@@ -40,3 +40,17 @@ With embed:
 And:
 * Embed requires opening and closing tags (`embed`/`endembed`)
 * You can do things before/after an embed (unlike how "extends" is a total takeover of your template).
+
+----
+
+## Examples of include/embed
+
+Take this views template, from an imaginary base theme:<br>
+[@example_base/views-view.html.twig](https://github.com/alisonjo315/alison-randomness/blob/main/twig/example_base/templates/views-view.html.twig)
+
+Two "re-uses" of that template, in our "demo" child theme:
+
+* Example with `include` -- here, all that's happening is we're passing variables to customize the classes:<br>
+  [@example_child/views-view--news--block-teaser.html.twig](https://github.com/alisonjo315/alison-randomness/blob/main/twig/example_child/templates/views-view--news--block-teaser.html.twig)
+* Example with embed -- here, we're passing variables to customize the classes, AND overriding one "block":<br>
+  [@example_child/views-view--news.html.twig](https://github.com/alisonjo315/alison-randomness/blob/main/twig/example_child/templates/views-view--news.html.twig)
