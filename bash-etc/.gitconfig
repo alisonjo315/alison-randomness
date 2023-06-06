@@ -44,6 +44,10 @@
 	clremotebrpantheon = remote prune pantheon
 	# see also: ./.git_delete-merged-branches.sh
 	cherryx = cherry-pick -x
+	cherrypit = rebase -r --onto
+	# ^^ how to use: git cherrypit a1b2c3d4e5f6^ a1b2c3d4e5f6
+	# "cherry pit" name idea (and instructions) from https://sethrobertson.github.io/GitFixUm/fixup.html#remove_deep
+	# but -p is deprecated, ergo -r: https://github.com/SethRobertson/GitFixUm/issues/28
 	brdatea = branch --sort=committerdate
 	brdated = branch --sort=-committerdate
 	brdel = branch -D
@@ -60,3 +64,5 @@
 # helper to store credentials (specifically for bitbucket app passwords, idk what else it would work for, but that's all I'm using it for right now)
 [credential]
 	helper = store
+[init]
+	defaultBranch = main
