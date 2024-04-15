@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\my_module\Commands;
+namespace Drupal\my_module\Drush\Commands;
 
 use Drupal;
 use Drupal\node\Entity\Node;
