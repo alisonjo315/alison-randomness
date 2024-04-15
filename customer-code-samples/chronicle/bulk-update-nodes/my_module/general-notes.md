@@ -11,3 +11,8 @@ If we were extra clever, we could make something like this into a `drush generat
 * How to deal with loading too much data
 * How to access fields
 * Pretty printing output
+
+----
+
+Alison here 👋  One another link that may or may not help:
+* https://www.fourkitchens.com/blog/development/custom-drush-commands-drush-generate/
