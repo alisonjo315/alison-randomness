@@ -16,3 +16,5 @@ If we were extra clever, we could make something like this into a `drush generat
 
 Alison here 👋  One another link that may or may not help:
 * https://www.fourkitchens.com/blog/development/custom-drush-commands-drush-generate/
+
+⚠️ And, general reminder: Good idea to create a fresh site backup before running anything like this on a production site!
