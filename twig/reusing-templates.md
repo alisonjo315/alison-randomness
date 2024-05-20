@@ -11,19 +11,19 @@ All three of these twig "tags" let you reuse templates:
 
 Look at the twig docs! -- but...
 
-### Include ([twig docs](https://twig.symfony.com/doc/2.x/tags/include.html))
+### Include ([twig docs](https://twig.symfony.com/doc/3.x/tags/include.html))
 A simple use of "include" is to literally and simply insert an entire template in a particular spot.  "La la la la RIGHT HERE la la la la" -- RIGHT HERE we insert a totally different template file, as-is.
 A more complex use of "include" (you'll see this all over your Palantir templates), is `include ... with`
 * "include with" allows you to pass variables from the includING template to the includED template.
 
-### Extends ([twig docs](https://twig.symfony.com/doc/2.x/tags/extends.html))
+### Extends ([twig docs](https://twig.symfony.com/doc/3.x/tags/extends.html))
 `extends` _**also**_ lets you reuse another template.  You can't pass variables, but you can override "blocks".
 * WARNING: If you use `extends`, you can't do anything that isn't inside a `block` tag.
 * **_In my opinion/experience,_** the reason to use `extends` is if you want to reuse another template, but override one or more sections.
   * I don't use `extends` basically ever these days, I prefer to use `include` or `embed` so I can pass variables.
   * (Again, you can't pass variables with "extends")
 
-### Embed ([twig docs](https://twig.symfony.com/doc/2.x/tags/embed.html))
+### Embed ([twig docs](https://twig.symfony.com/doc/3.x/tags/embed.html))
 
 So, `embed` puts it all together.
 
@@ -40,8 +40,8 @@ And:
 ### Block
 By the way, what is "block"?
 
-"block" tag, in the official [twig docs](https://twig.symfony.com/doc/2.x/tags/block.html) (and the related [block function](https://twig.symfony.com/doc/2.x/functions/block.html)):
-> Blocks are used for inheritance and act as placeholders and replacements at the same time. They are documented in detail in the documentation for the [extends](https://twig.symfony.com/doc/2.x/tags/extends.html) tag.
+"block" tag, in the official [twig docs](https://twig.symfony.com/doc/3.x/tags/block.html) (and the related [block function](https://twig.symfony.com/doc/3.x/functions/block.html)):
+> Blocks are used for inheritance and act as placeholders and replacements at the same time. They are documented in detail in the documentation for the [extends](https://twig.symfony.com/doc/3.x/tags/extends.html) tag.
 > Block names must consist of alphanumeric characters, and underscores. The first char can't be a digit and dashes are not permitted.
 
 Put another way:
