@@ -15,8 +15,8 @@ Do you have a link that should be in this high-level list?  Submit a PR!
 ### 🌳 Twig
 Y'know, Twig itself!
 * 📖 I spend most of my time in the "Twig Reference" section -- Tags, Filters, Functions, Tests, Operators
-  * Drupal 9 uses [Twig 2.x](https://twig.symfony.com/doc/2.x/)
   * Drupal 10 uses [Twig 3.x](https://twig.symfony.com/doc/3.x/)
+  * Drupal 9 uses [Twig 2.x](https://twig.symfony.com/doc/2.x/)
   * Make sure you're looking at the right version of Twig for your version of Drupal!
 
 ----
